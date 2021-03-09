@@ -11,21 +11,6 @@
 // con difficoltà 1 => tra 1 e 80
 // con difficoltà 2 => tra 1 e 50
 
-var difficolta;
-
-while (!(difficolta < 0 && difficolta > 2)) {
-
-  difficolta = parseInt(prompt("Scegli un livello difficoltà tra 0, 1 e 2"));
-
-  if (difficolta == 0) {
-    campoMinato(1,100);
-  } else if (difficolta == 1) {
-    campoMinato(1,80);
-  } else if (difficolta == 2) {
-    campoMinato(1,50);
-  }
-}
-
 function campoMinato (num1,num2) {
 
   var bombe = [];
@@ -76,4 +61,24 @@ function campoMinato (num1,num2) {
   if (j == (num2 - 16)) {
   console.log("Complimenti, hai vinto!");
   }
+}
+
+var difficolta;
+var k = 0;
+
+while (!(difficolta < 0 && difficolta > 2) && k < 1) {
+
+  difficolta = parseInt(prompt("Scegli un livello difficoltà tra 0, 1 e 2"));
+
+  if (difficolta == 0) {
+    campoMinato(1,100);
+    k++
+  } else if (difficolta == 1) {
+    campoMinato(1,80);
+    k++
+  } else if (difficolta == 2) {
+    campoMinato(1,50);
+    k++
+  }
+
 }
