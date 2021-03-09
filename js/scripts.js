@@ -27,13 +27,19 @@ var utente;
 
 var j = 0;
 
-while (j < 10) {
+while (j < 10 && !(bombe.includes(utente))) {
 
   utente = parseInt(prompt("Inserisci un numero da 1 a 100"));
 
-  if (!(numeri.includes(utente)) && !(isNaN(utente)) && !(utente < 1 || utente > 100)) {
+  if (bombe.includes(utente)) {
+
+    console.log("Hai perso la partita!");
+
+  } else if (!(numeri.includes(utente)) && !(isNaN(utente)) && !(utente < 1 || utente > 100)) {
+
     numeri.push(utente);
     j++
+
   }
   console.log(numeri);
 }
@@ -47,3 +53,15 @@ console.log(numeri.length);
 // con difficoltà 0 => tra 1 e 100
 // con difficoltà 1 => tra 1 e 80
 // con difficoltà 2 => tra 1 e 50
+
+
+// if (bombe.includes(utente)) {
+//   console.log("Hai perso la partita!");
+// } else if (!(numeri.includes(utente))) {
+//   if (!(isNaN(utente))){
+//     if (!(utente < 1 || utente > 100)){
+//       numeri.push(utente);
+//       j++;
+//     }
+//   }
+// }
