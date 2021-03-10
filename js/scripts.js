@@ -21,8 +21,6 @@ function campoMinato (num1,num2) {
 
   document.getElementById("difficolta").innerHTML = num2;
 
-  resetta.addEventListener("click", myreset);
-
   function myreset() {
     numero.value = null;
     numeri.length = 0;
@@ -76,6 +74,7 @@ invia.addEventListener("click",
     console.log(numeri);
   }
 
+  resetta.addEventListener("click", myreset);
 
   console.log(numeri.length);
 
@@ -84,7 +83,7 @@ invia.addEventListener("click",
 
 
 if (numeri.length == (num2 - 16)) {
-console.log("Complimenti, hai vinto!");
+  console.log("Complimenti, hai vinto!");
 }
 
 
