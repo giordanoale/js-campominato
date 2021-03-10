@@ -1,0 +1,51 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FD6666;
+    font-family: 'VT323', monospace;
+    letter-spacing: 3px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input #numero {
+    margin: 10px 0 10px 0;
+}
+
+.buttons {
+  display: flex;
+}
+
+button {
+  margin-right: 5px;
+  padding: 3px;
+
+}
+
+#myalert {
+  margin-top: 20px;
+  font-size: 40px;
+}
+
+#istruzioni {
+  margin-top: 20px;
+  width: 60%;
+  margin:auto;
+  font-size: 24px;
+}

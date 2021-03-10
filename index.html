@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <!-- /google font -->
+
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
     <!-- /css -->
@@ -16,6 +21,26 @@
   </head>
 
   <body>
+
+    <header>
+      <img src="img/logo.gif" alt="logo">
+      <h1>Campo Minato</h1>
+    </header>
+
+    <div class="input">
+      <h2>Inserisci un numero da 1 a <span id="difficolta"></span></h2>
+      <input id="numero" type="text" placeholder="">
+      <div class="buttons">
+        <button id="invia">Invia</button>
+        <button id="resetta">Reset</button>
+      </div>
+      <h2 id="myalert"></h2>
+      <h2 id="secondline"></h2>
+
+      <div id="istruzioni">ISTRUZIONI: Dopo aver inserito il numero premi il pulsante INVIA per controllare se quello è il "numero bomba" oppure è un numero valido. Ogni numero valido vale 100 punti. <br> Quando hai finito premi RESET per ricominciare a giocare, se vuoi modificare la difficoltà ricarica la pagina.</div>
+
+    </div>
+
 
     <!-- javascript -->
     <script src="js/scripts.js" charset="utf-8"></script>

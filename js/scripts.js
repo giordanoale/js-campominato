@@ -15,52 +15,79 @@ function campoMinato (num1,num2) {
 
   var bombe = [];
   var bomba;
+  var numero = document.getElementById("numero");
+  var myalert = document.getElementById("myalert");
+  var resetta = document.getElementById("resetta");
 
-  var i = 0;
+  document.getElementById("difficolta").innerHTML = num2;
 
-  while (i < 16) {
+  resetta.addEventListener("click", myreset);
 
-    bomba = Math.floor(Math.random() * num2) + 1;
-
-    if (!(bombe.includes(bomba))){
-      bombe.push(bomba);
-      i++
-    }
+  function myreset() {
+    numero.value = null;
+    numeri.length = 0;
+    bombe.length = 0;
+    randomNum();
   }
 
-  console.log(bombe);
-  console.log(bombe.length);
+
+
+
+  function randomNum(){
+    var i = 0;
+
+    while (i < 16) {
+
+      bomba = Math.floor(Math.random() * num2) + 1;
+
+      if (!(bombe.includes(bomba))){
+        bombe.push(bomba);
+        i++
+      }
+    }
+    console.log(bombe);
+  }
+
+
+  randomNum();
 
 
 
   var numeri = [];
-  var utente;
+  var invia = document.getElementById("invia");
 
-  var j = 0;
+invia.addEventListener("click",
+  function() {
 
-  while (j < (num2 - 16) && !(bombe.includes(utente))) {
+  var utente = parseInt(numero.value)
 
-    utente = parseInt(prompt("Inserisci un numero da 1 a " + num2));
+  if (bombe.includes(utente)) {
 
-    if (bombe.includes(utente)) {
+    myalert.innerHTML = "BOOM!!! Hai trovato la bomba!!! Il tuo punteggio finale è " + (numeri.length * 100);
+    myreset();
+    //richiamare funzione numeri bombe
 
-      console.log("BOOM!!! Hai trovato la bomba il tuo punteggio è " + (numeri.length * 100));
+  } else if (!(numeri.includes(utente)) && !(isNaN(utente)) && !(utente < 1 || utente > num2)) {
 
-    } else if (!(numeri.includes(utente)) && !(isNaN(utente)) && !(utente < 1 || utente > num2)) {
+    numeri.push(utente);
+    myalert.innerHTML = "Punteggio: " + (numeri.length * 100);
+    numero.value = null;
 
-      numeri.push(utente);
-      j++
-
-    }
     console.log(numeri);
   }
 
 
   console.log(numeri.length);
 
-  if (j == (num2 - 16)) {
-  console.log("Complimenti, hai vinto!");
   }
+);
+
+
+if (numeri.length == (num2 - 16)) {
+console.log("Complimenti, hai vinto!");
+}
+
+
 }
 
 var difficolta;
@@ -68,7 +95,7 @@ var k = 0;
 
 while (!(difficolta < 0 && difficolta > 2) && k < 1) {
 
-  difficolta = parseInt(prompt("Scegli un livello difficoltà tra 0, 1 e 2"));
+  difficolta = parseInt(prompt("Benvenuto su campo minato! Scegli un livello difficoltà tra 0, 1 e 2"));
 
   if (difficolta == 0) {
     campoMinato(1,100);
