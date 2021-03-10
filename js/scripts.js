@@ -97,15 +97,21 @@ while (!(difficolta < 0 && difficolta > 2) && k < 1) {
 
   difficolta = parseInt(prompt("Benvenuto su campo minato! Scegli un livello difficoltà tra 0, 1 e 2"));
 
-  if (difficolta == 0) {
-    campoMinato(1,100);
-    k++
-  } else if (difficolta == 1) {
-    campoMinato(1,80);
-    k++
-  } else if (difficolta == 2) {
-    campoMinato(1,50);
-    k++
+  switch (difficolta) {
+    case 0:
+      campoMinato(1,100);
+      k++;
+    break;
+
+    case 1:
+      campoMinato(1,80);
+      k++;
+    break;
+
+    case 2:
+      campoMinato(1,50);
+      k++;
+    break;
   }
 
 }
